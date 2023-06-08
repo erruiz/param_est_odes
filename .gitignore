@@ -1,0 +1,2 @@
+# Do not track symbolic links to configuration files.
+*.mk
