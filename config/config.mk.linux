@@ -2,10 +2,10 @@
 cxx=g++ -fopenmp
 
 # Compilation flags
-cflags=-Wall -ansi -pedantic -O3
+cflags=-Wall -ansi -pedantic -O3 -std=c++11
 
 # BLAS/LAPACK flags for linear algebra
-lp_lflags=-llapack -lblas
+lp_lflags=-llapack -lblas -lm
 
 # FFTW flags
 fftw_iflags=

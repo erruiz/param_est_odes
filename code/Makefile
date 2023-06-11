@@ -29,4 +29,4 @@ lvs_test: lvs_test.cc dopri54.o odes.hh
 	$(cxx) $(cflags) $(iflags) $(lp_lflags) -o $@ $^
 
 param_est: param_est.cc dopri54.o odes.hh
-	$(cxx) $(cflags) $(iflags) $(lp_lflags) -o $@ $^
+	$(cxx) $(cflags) $(iflags) -o $@ $^ $(lp_lflags)
