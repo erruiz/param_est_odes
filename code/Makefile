@@ -13,20 +13,20 @@ all: $(execs)
 
 # A Makefile target to refresh the dependency file
 depend:
-	$(cxx) $(iflags) -MM $(src) >Makefile.dep
+	$(cxx) $(cflags) -MM $(src) >Makefile.dep
 
 # A Makefile target to remove all the built files
 clean:
 	rm -f $(objs) $(execs)
 
 %.o: %.cc
-	$(cxx) $(cflags) $(iflags) $(lp_lflags) -c $<
+	$(cxx) $(cflags) -c $< $(lp_lflags)
 
 lv_test: lv_test.cc dopri54.o odes.hh
-	$(cxx) $(cflags) $(iflags) -o $@ $^
+	$(cxx) $(cflags) -o $@ $^
 
 lvs_test: lvs_test.cc dopri54.o odes.hh
-	$(cxx) $(cflags) $(iflags) $(lp_lflags) -o $@ $^
+	$(cxx) $(cflags) -o $@ $^ $(lp_lflags)
 
 param_est: param_est.cc dopri54.o odes.hh
-	$(cxx) $(cflags) $(iflags) -o $@ $^ $(lp_lflags)
+	$(cxx) $(cflags) -o $@ $^ $(lp_lflags)
